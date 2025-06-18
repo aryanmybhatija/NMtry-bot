@@ -76,9 +76,9 @@ help_pages = [
         "5. **/lock**\n"
         "> Lock channel from extraction (Owner only)\n\n"
         "6. **/dl link**\n"
-        "> Download videos (Not available in v3 if you are using)\n\n"
+        "> Download videos (Not available Now)\n\n"
         "7. **/adl link**\n"
-        "> Download audio (Not available in v3 if you are using)\n\n"
+        "> Download audio (Not available Now)\n\n"
         "8. **/login**\n"
         "> Log into the bot for private channel access\n\n"
         "9. **/batch**\n"
@@ -93,7 +93,7 @@ help_pages = [
         "12. **/plan**\n"
         "> Check premium plans\n\n"
         "13. **/speedtest**\n"
-        "> Test the server speed (not available in v3)\n\n"
+        "> Test the server speed (not available Now)\n\n"
         "14. **/terms**\n"
         "> Terms and conditions\n\n"
         "15. **/cancel**\n"
@@ -192,56 +192,78 @@ async def terms(client, message):
 @app.on_message(filters.command("plan") & filters.private)
 async def plan(client, message):
     plan_text = (
-       "> 💰 **Premium Price**:\n\n Starting from 20 rs for 10 days payment no 9329548617 INR accepted via **__Amazon Gift Card__** (terms and conditions apply).\n"
-        "📥 **Download Limit**: Users can download up to 100,000 files in a single batch command.\n"
-        "🛑 **Batch**: You will get two modes /bulk and /batch.\n"
-        "   - Users are advised to wait for the process to automatically cancel before proceeding with any downloads or uploads.\n\n"
-        "📜 **Terms and Conditions**: For further details and complete terms and conditions, please send /terms.\n" 
+        "💎 **Upgrade to Premium** 💎\n\n"
+        "🚀 **Exclusive Premium Features**\n"
+        "✅ No need to verify every 3 hours ⏳\n"
+        "✅ Bulk mode: Upload up to 500 files 📂\n"
+        "✅ Priority Admin Support\n"
+        "✅ Unlimited Leeches\n\n"
+        
+        "🪙 **10-Day Plan**\n"
+        "💰 Price: ₹50 🇮🇳 / **$0.60 USDT**\n\n"
+        
+        "🪙 **20-Day Plan**\n"
+        "💰 Price: ₹90 🇮🇳 / **$1.08 USDT**\n\n"
+        
+        "🪙 **Monthly Plan**\n"
+        "💰 Price: ₹130 🇮🇳 / **$1.56 USDT**\n\n"
+
+        "📌 **Payment Methods**:\n"
+        "- QR Code: [Click Here for QR](https://myappme.shop/img/file_200.jpg)\n"
+        "- For International payment, Contact Admin\n\n"
+        
+        "📤 **After Payment**:\n"
+        "1️⃣ Send a payment screenshot below 👇\n"
+        "2️⃣ Contact: Admin to complete your purchase 🤝\n\n"
+        
+        "💌 We're here for you! 💕"
     )
-     
+
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
+            [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
         ]
     )
-    await message.reply_text(plan_text, reply_markup=buttons)
- 
- 
+    await message.reply_text(plan_text, reply_markup=buttons, disable_web_page_preview=True)
+
+
 @app.on_callback_query(filters.regex("see_plan"))
 async def see_plan(client, callback_query):
     plan_text = (
-        "> 💰**Premium Price**\n\n Starting from $2 or 200 INR accepted via **__Amazon Gift Card__** (terms and conditions apply).\n"
-        "📥 **Download Limit**: Users can download up to 100,000 files in a single batch command.\n"
-        "🛑 **Batch**: You will get two modes /bulk and /batch.\n"
-        "   - Users are advised to wait for the process to automatically cancel before proceeding with any downloads or uploads.\n\n"
-        "📜 **Terms and Conditions**: For further details and complete terms and conditions, please send /terms or click See Terms👇\n"
+        "💎 **Upgrade to Premium** 💎\n\n"
+        "🚀 **Exclusive Premium Features**\n"
+        "✅ No need to verify every 3 hours ⏳\n"
+        "✅ Bulk mode: Upload up to 500 files 📂\n"
+        "✅ Priority Admin Support\n"
+        "✅ Unlimited Leeches\n\n"
+        
+        "🪙 **10-Day Plan**\n"
+        "💰 Price: ₹50 🇮🇳 / **$0.60 USDT**\n\n"
+        
+        "🪙 **20-Day Plan**\n"
+        "💰 Price: ₹90 🇮🇳 / **$1.08 USDT**\n\n"
+        
+        "🪙 **Monthly Plan**\n"
+        "💰 Price: ₹130 🇮🇳 / **$1.56 USDT**\n\n"
+
+        "📌 **Payment Methods**:\n"
+        "- QR Code: [Click Here for QR](https://myappme.shop/img/file_200.jpg)\n"
+        "- For International payment, Contact Admin\n\n"
+        
+        "📤 **After Payment**:\n"
+        "1️⃣ Send a payment screenshot below 👇\n"
+        "2️⃣ Contact: Admin to complete your purchase 🤝\n\n"
+        
+        "💌 We're here for you! 💕"
     )
-     
+
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
+            [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
         ]
     )
-    await callback_query.message.edit_text(plan_text, reply_markup=buttons)
- 
- 
-@app.on_callback_query(filters.regex("see_terms"))
-async def see_terms(client, callback_query):
-    terms_text = (
-        "> 📜 **Terms and Conditions** 📜\n\n"
-        "✨ We are not responsible for user deeds, and we do not promote copyrighted content. If any user engages in such activities, it is solely their responsibility.\n"
-        "✨ Upon purchase, we do not guarantee the uptime, downtime, or the validity of the plan. __Authorization and banning of users are at our discretion; we reserve the right to ban or authorize users at any time.__\n"
-        "✨ Payment to us **__does not guarantee__** authorization for the /batch command. All decisions regarding authorization are made at our discretion and mood.\n"
-    )
-     
-    buttons = InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
-        ]
-    )
-    await callback_query.message.edit_text(terms_text, reply_markup=buttons)
- 
- 
+    await callback_query.message.edit_text(plan_text, reply_markup=buttons, disable_web_page_preview=True)
