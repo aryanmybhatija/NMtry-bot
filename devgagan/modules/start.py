@@ -274,6 +274,7 @@ async def buy_basic_plan(client, callback_query):
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
+            [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
         ]
     )
 
@@ -313,6 +314,7 @@ async def buy_medium_plan(client, callback_query):
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
+            [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
         ]
     )
 
@@ -352,6 +354,7 @@ async def buy_pro_plan(client, callback_query):
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
+            [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
         ]
     )
 
