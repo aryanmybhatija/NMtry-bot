@@ -209,8 +209,6 @@ async def plan(client, message):
             [InlineKeyboardButton("🔹 Buy Basic", callback_data="buy_basic")],
             [InlineKeyboardButton("🔸 Buy Medium", callback_data="buy_medium")],
             [InlineKeyboardButton("🔶 Buy Pro", callback_data="buy_pro")],
-            [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
         ]
     )
 
@@ -234,8 +232,6 @@ async def see_plan(client, callback_query):
             [InlineKeyboardButton("🔹 Buy Basic", callback_data="buy_basic")],
             [InlineKeyboardButton("🔸 Buy Medium", callback_data="buy_medium")],
             [InlineKeyboardButton("🔶 Buy Pro", callback_data="buy_pro")],
-            [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
         ]
     )
 
@@ -271,7 +267,6 @@ async def buy_basic_plan(client, callback_query):
 
     buttons = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
             [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
@@ -311,7 +306,6 @@ async def buy_medium_plan(client, callback_query):
 
     buttons = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
             [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
@@ -351,7 +345,6 @@ async def buy_pro_plan(client, callback_query):
 
     buttons = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
             [InlineKeyboardButton("🧾 Get QR Code", url="https://myappme.shop/img/file_200.jpg")],
             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/sonuporsa")],
             [InlineKeyboardButton("⬅️ Back to Plans", callback_data="see_plan")],
